@@ -1,44 +1,81 @@
 <!doctype html>
 <html>
   <head>
-<p><!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171817325-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-171817325-1');
-</script>
-</p>
     <meta charset="utf-8">
     <title>Cervélo</title>
 
+    <!-- id는 #(#이 우선적으로 실행된다.) class는 '.' 을 사용해서 나타내는 방법     태그 < class < id 순으로 실행 (id)는 한개만 존재할 수 있다.-->
+    <style>
+
+      body {
+        margin: 0;
+      }
+
+      a {
+        color:black;
+        text-decoration: none;
+      }
+
+
+      h1 {
+        font-size: 45px;
+        text-align: center;
+        border-bottom:1px solid;
+        margin: 0;
+        padding: 20px;
+      }
+
+      ul{
+        border-right: 1px solid gray;
+        width: 120px;
+        margin: 0;
+        padding: 20px;
+      }
+
+
+
+      #article{
+        padding-left: 25px;
+      }
+
+      #grid ul{
+        padding-left: 33px;
+      }
+
+      @@media(max-width: 800px) {
+        #grid{
+          display: block;
+        }
+        ul{
+          border-right: none ;
+        }
+      }
+
+    </style>
+
   </head>
-
   <body>
-    <h1><a href="index.html">Cervélo</a></h1>
-    <ol>
-      <li><a href="1.html">역사</a></li>
-      <li><a href="2.html">프레임, 구동계</a></li>
-      <li><a href="3.html">판매처</a></li>
-    </ol>
-
-
-    <h2>역사</h2>
-
-    <p style="margin-top:40px;">
-    <!--<strong><a href="https://en.wikipedia.org/wiki/Road_bicycle" target="_blank" title="Road_bicycle">로드 바이크</a></strong>-->
-
-
-    <img src="CerveloLogo_1400x.jpg" width="100%">
-    <p><a href="https://en.wikipedia.org/wiki/Aerodynamics" target="_blank" title="에어로다이나믹">에어로다이나믹</a> 을 위해서라면 뭐든지 하는 캐나다 브랜드.
-    1995년 필 화이트와 제라드 브루멘이라는 두 엔지니어에 의해 설립되었다.</p>
-    <p style="margin-top:50px;">
-
-
-    이들은 1986년부터 자전거와 인간 동력 이동수단에 대해 연구해왔는데, 한 이탈리아 탑레벨 선수가 자신을 스폰해주던 제조사가 그가 원하는 타임 트라이얼 바이크를 위해 공력성능과 기술개발에 투자할 의지가 없다는 사실을 깨닫고 화이트와 브루멘에게 '최고의 타임 트라이얼 바이크를 만들어 달라'며 프로젝트를 의뢰하게 된다.
-     <p style="margin-top:10px;">그리고 이 콤비는 공돌이 정신에 입각하여 기존 로드바이크를 분석, 기술과 성능에 대해서 시장논리에 타협하지 않는 프레임을 완성한다.
-
+      <h1><a href="index.html">Cervélo</a></h1>
+      <div id="grid">
+        <ul>
+          <li><a href="1.html" >역사</a></li>
+          <li><a href="2.html" >프레임, 구동계</a></li>
+          <li><a href="3.html" >판매처</a></li>
+        </ul>
+        <div id="article">
+            <h2>역사</h2>
+            <p style="margin-top:40px;">
+            <!--<strong><a href="https://en.wikipedia.org/wiki/Road_bicycle" target="_blank" title="Road_bicycle">로드 바이크</a></strong>-->
+            <img src="CerveloLogo_1400x.jpg" width="100%">
+            <p>
+              <a href="https://en.wikipedia.org/wiki/Aerodynamics" target="_blank" title="에어로다이나믹"><strong>에어로다이나믹</strong></a> 을 위해서라면 뭐든지 하는 캐나다 브랜드.
+            1995년 필 화이트와 제라드 브루멘이라는 두 엔지니어에 의해 설립되었다.
+            <br>
+            이들은 1986년부터 자전거와 인간 동력 이동수단에 대해 연구해왔는데, 한 이탈리아 탑레벨 선수가 자신을 스폰해주던 제조사가 그가 원하는 타임 트라이얼 바이크를 위해 공력성능과 기술개발에 투자할 의지가 없다는 사실을 깨닫고 화이트와 브루멘에게 '최고의 타임 트라이얼 바이크를 만들어 달라'며 프로젝트를 의뢰하게 된다
+            <br>
+            그리고 이 콤비는 공돌이 정신에 입각하여 기존 로드바이크를 분석, 기술과 성능에 대해서 시장논리에 타협하지 않는 프레임을 완성한다.
+          </p>
+           </div>
+     </div>
    </body>
 </html>
