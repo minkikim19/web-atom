@@ -89,11 +89,13 @@ var app = http.createServer(function(request,response){
       var post = qs.parse(body);
       var title = post.title;
       var description = post.description;
-      console.log(post.title);
-      console.log(post.description);
+      fs.writeFile(`data/${title}`, description, 'utf8', function(err)
+      {
+        response.writeHead(302, {Location: `/?id=${title}`}); //한국어로 생성하면 오류 발생
+        response.end();
+      })
     });
-      response.writeHead(200);
-      response.end('success');
+
     }
     else
     {
