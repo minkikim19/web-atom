@@ -2,6 +2,7 @@ var http = require('http');
 var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
+var path = require('path');
 
 var template = require('./lib/template.js');
 
@@ -26,7 +27,8 @@ var app = http.createServer(function(request,response){
         });
       } else {
         fs.readdir('./data', function(error, filelist){
-          fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
+          var filteredID = path.parse(queryData.id).base;
+          fs.readFile(`data/${filteredID}`, 'utf8', function(err, description){
             var title = queryData.id;
             var list = template.list(filelist);
             var html = template.html(title, list,
@@ -92,7 +94,8 @@ var app = http.createServer(function(request,response){
     else if(pathname === '/update')
     {
       fs.readdir('./data', function(error, filelist){
-        fs.readFile(`data/${queryData.id}`, 'utf8', function(err, description){
+        var filteredID = path.parse(queryData.id).base;
+        fs.readFile(`data/${filteredID}`, 'utf8', function(err, description){
           var title = queryData.id;
           var list = template.list(filelist);
           var html = template.html(title, list,
@@ -152,7 +155,8 @@ var app = http.createServer(function(request,response){
       {
         var post = qs.parse(body);
         var id = post.id;
-        fs.unlink(`data/${id}`, function(error)
+        var filteredID = path.parse(id).base;
+        fs.unlink(`data/${filteredID}`, function(error)
         {
           response.writeHead(302, {Location: `/`}); //한국어로 생성하면 오류 발생
           response.end();
